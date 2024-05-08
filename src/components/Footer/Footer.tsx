@@ -2,18 +2,25 @@ import {Element, Navigation} from "./FooterStyle";
 import {useEffect} from "react";
 import {animate, motion, stagger} from "framer-motion";
 
-function Footer() {
+type Props = {
+    screen: string
+    setScreen: Function
+    loaded: boolean
+}
+
+function Footer({setScreen, loaded, screen}: Props) {
 
     useEffect(() => {
-     setTimeout(() => animate(".element", {y: ["5em", "0em"]}, {delay: stagger(0.2), ease: "easeOut"}), 2300)
+     !loaded && setTimeout(() => animate(".element", {y: ["5em", "0em"]}, {delay: stagger(0.2), ease: "easeOut"}), 3000)
     });
+
     return (
         <footer>
            <Navigation>
-               <motion.a initial={{y: "5em"}} className="element" href="/"><Element>Start</Element></motion.a>
-               <motion.a initial={{y: "5em"}} className="element" href="mailto:kontakt@organizer-dni-otwartych.pl"><Element>Kontakt</Element></motion.a>
-               <motion.a initial={{y: "5em"}} className="element" href="https://github.com/popscripts"><Element>GitHub</Element></motion.a>
-               <motion.a initial={{y: "5em"}} className="element" href="https://expo.dev//accounts/popscripts/projects/odo/builds/a3c9cc07-36b7-4c9f-a630-5cc74bf39f7b"><Element>Pobierz</Element></motion.a>
+               <Element as={motion.li} initial={{y: "5em"}} className="element" onClick={()=>setScreen("start")}>Start</Element>
+               <Element as={motion.li} initial={{y: "5em"}} className="element" onClick={()=>setScreen("contact")}>Kontakt</Element>
+               <Element as={motion.li} initial={{y: "5em"}} className="element" onClick={()=>setScreen("instruction")}>Instrukcja</Element>
+               <Element as={motion.li} initial={{y: "5em"}} className="element" onClick={()=>setScreen("download")}>Pobierz</Element>
 
            </Navigation>
         </footer>

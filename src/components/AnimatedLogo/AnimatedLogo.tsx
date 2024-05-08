@@ -2,7 +2,11 @@ import {animate, motion} from "framer-motion";
 import React, {useEffect} from "react";
 import {Svg, Wrapper} from "./AnimatedLogoStyle";
 
-function AnimatedLogo() {
+type Props = {
+    loaded: boolean
+}
+
+function AnimatedLogo({loaded}: Props) {
 
     const sequence = [
         ["#circle2", {pathLength: [0, 0.5]}, {duration: 0.2}],
@@ -16,7 +20,7 @@ function AnimatedLogo() {
 
     useEffect(() => {
         // @ts-ignore
-        animate(sequence, {animationTimingFunction: "linear"}).then(() => {
+        !loaded && animate(sequence, {animationTimingFunction: "linear"}).then(() => {
             animate("#logo-wrapper", {left: "-10vw", top: "40vh", scale: 1.3, opacity: 0.05, width: "auto"}, {duration: 1.5, ease: "easeInOut"})
         });
     }, );
