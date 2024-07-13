@@ -1,6 +1,6 @@
 
 import React, {useEffect} from "react";
-import {H1, H2, Accent} from "../commonStyles";
+import {H1, Accent} from "../commonStyles";
 import {animate, motion, stagger} from "framer-motion";
 import {Button, Wrapper} from "./DownloadStyle";
 
@@ -29,7 +29,7 @@ function Download() {
                 </motion.p>
             </Wrapper>
             <Button className={"instruction-element"}
-                    href={"https://expo.dev/artifacts/eas/me4PBR566sBkbuhZwWoHQ8.apk"}>Pobierz .apk
+                    href={"./odo.apk"} download={"odo"}>Pobierz .apk
             </Button>
         </>
     )
