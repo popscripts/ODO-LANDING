@@ -10,15 +10,8 @@ function App() {
 
     const [loaded, setLoaded] = useState(false);
 
-    const wakeUpServer = () => {
-        try {
-            fetch("https://panel.organizer-dni-otwartych.pl", {}).then()
-        } catch (e) {}
-    }
-
     useEffect(() => {
-        setTimeout(() => {setLoaded(true)}, 2500)
-        !loaded && wakeUpServer()
+        setTimeout(() => {setLoaded(true)}, 1300)
     });
 
   return (

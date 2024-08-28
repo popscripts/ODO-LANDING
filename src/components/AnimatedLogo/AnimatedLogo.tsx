@@ -13,9 +13,9 @@ function AnimatedLogo({loaded}: Props) {
         ["#circle1", {opacity: [0, 1]}, {duration: 0.01, at: "-0.05"}],
         ["#circle1", {pathLength: [0, 1]}, {duration: 0.4}],
         ["#circle2", {pathLength: [0.5, 1]}, {duration: 0.2}],
-        ["#circle3", {pathLength: [0,1]}, {duration: 0.4}],
-        ["#path", {pathLength: [0,1]}, {duration: 0.4}],
-        ["#circle3", {stroke: ["#f6f6f6","#2BD479"]}, {duration: 0.4, at:"-0.4"}],
+        ["#circle3", {pathLength: [0,1]}, {duration: 0.2}],
+        ["#path", {pathLength: [0,1]}, {duration: 0.3}],
+        ["#circle3", {stroke: ["#f6f6f6","#2BD479"]}, {duration: 0.3, at:"-0.4"}],
     ]
 
     useEffect(() => {
