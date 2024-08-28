@@ -29,7 +29,7 @@ function Download() {
                 </motion.p>
             </Wrapper>
             <Button className={"instruction-element"}
-                    href={"./odo.apk"} download={"odo"}>Pobierz .apk
+                    href={"https://api.organizer-dni-otwartych.pl/v3/odo.apk"} download={"odo"}>Pobierz .apk
             </Button>
         </>
     )
